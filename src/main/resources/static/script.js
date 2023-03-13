@@ -1,8 +1,10 @@
+// Get HTML elements with IDs bitcoin, ethereum, dogecoin, and shiba-inu
 var btc = document.getElementById("bitcoin");
 var eth = document.getElementById("ethereum");
 var doge = document.getElementById("dogecoin");
 var shibaInu = document.getElementById("shiba-inu");
 
+// Set up the settings for the API request using the jQuery AJAX function
 var settings = {
     "async": true,
     "crossDomain": true,
@@ -10,6 +12,9 @@ var settings = {
     "method": "GET",
     "headers": {}
 }
+
+// Make an API request to the Coingecko API using the settings defined above,
+// and update the HTML elements with the USD price data returned by the API
 $.ajax(settings).done(function(response){
     btc.innerHTML = response.bitcoin.usd;
     eth.innerHTML = response.ethereum.usd;
